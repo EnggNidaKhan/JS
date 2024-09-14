@@ -1,0 +1,133 @@
+<!-- <script>
+    function fun_one(){
+        return "welcome to javascript";
+    }
+    console.log(fun_one);
+</script> -->
+
+<!-- <script>
+    function fun_two(){
+        return "hello nida";
+    }
+    console.log(fun_two);
+</script>
+output:return function difinition
+ƒ fun_two(){
+    return "hello nida";
+} -->
+
+
+<!-- function with parameter -->
+<!-- <script>
+    function fun_one(arg1,arg2,arg3){
+        console.log(arg1,arg2,arg3);
+    }
+    fun_one("HTML","Java","Oracle");
+    fun_one("Anguler","React JS","Node JS");
+</script>
+ output:HTML Java Oracle
+function.html:23 Anguler React JS Node JS --> 
+
+
+<!-- one function call to another function.
+<script>
+    function fun_one(){
+        return fun_two;
+    }
+    function fun_two(){
+        return "Hello World";
+    }
+    console.log(fun_one);
+    console.log(fun_one());
+    console.log(fun_one()());
+</script>
+output:ƒ fun_one(){
+    return fun_two;
+}
+ ƒ fun_two(){
+    return "Hello World";
+}
+ Hello World -->
+
+
+ <!-- using for loop
+ <script>
+    let arr =[];
+    function fun_one(){
+    return "Nida";
+   }
+   for (let i=0;i<5;i++){
+     arr.push(fun_one);
+   }
+   for(let j=0;j<arr.length;j++){
+    console.log(arr[j]);
+   }
+ </script>
+ output: it prints nida 5 times -->
+
+
+ <!-- show the output to given time intervel
+ <script>
+    function fun_one(){
+        return "nida";
+    }
+    setTimeout(function(){
+        console.log(fun_one())
+    }, 2000);
+ </script> -->
+
+ <!-- <script>
+    function fun_one(){
+        return "Nida";
+    };
+    setInterval(function(){
+        console.log(fun_one())
+    },1000);
+ </script> -->
+
+ <!-- rest parameter function
+ <script>
+    function fun_one(... arg1){
+         console.log(arg1);
+    };
+    fun_one("hello", "world");
+    fun_one("Nida","Khan","csn");
+    fun_one();
+ </script> -->
+
+ <!-- <script>
+    let initialize = (user,getElementbyEmail,getElementbyId)=>{
+     console.log(user,getElementbyEmail(),getElementbyId());
+    };
+    let getElementbyEmail=()=>{
+        return "hello nida";
+    };
+    let getElementbyId=()=>{
+        return "bye nida";
+    };
+    initialize("hello_Hi",getElementbyEmail,getElementbyId);
+ </script> -->
+
+ <!-- <script>
+    (()=>{
+        console.log("Wlcome to IIFE");
+    })();
+ </script> -->
+
+ <!-- Genetaor
+ <script>
+    function *fun_one(){
+       yield "stm-1";
+       yield "stm-2";
+       yield "stm-3";
+       yield "stm-4";
+       yield "stm-5";
+    }
+    let cursor=fun_one();
+    console.log(cursor.next());
+    console.log(cursor.next());
+    console.log(cursor.next());
+    console.log(cursor.next());
+    console.log(cursor.next());
+    console.log(cursor.next());
+ </script> -->
