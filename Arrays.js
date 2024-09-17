@@ -219,6 +219,8 @@ console.log(
     //[ 1, 'one', 2, 'two', 3, 'three' ]
 );
 
+//FlatMap():
+
 let ar1=["Nida"];
 let ar2=["Khan"];
 console.log(
@@ -226,3 +228,125 @@ console.log(
         return [ele,ar2[index]]
     })
 );                        [ 'Nida', 'Khan' ]
+
+//findIndex():It is used to know the index of element
+
+console.log(
+   [1,2,3,4,5,6,7,8].findIndex((ele,index)=>{
+         return ele==3;
+   })
+);                    //2
+
+console.log(
+    [1,2,3,4,5,6,7,8].findIndex((ele,index)=>{
+          return ele==8;
+    })
+ );                       //7
+
+ console.log(
+    [20,40,34,56,23].findIndex((ele,index)=>{
+                return ele==50;
+    })
+ );            //-1
+
+ //delete indxof value
+
+ let arr2 = [1,2,3,4,5,6,7,8,9];
+ arr2.splice(2,1);
+ console.log(arr2);                        //[  1, 2, 4, 5,6, 7, 8, 9]
+
+ arr2.splice(arr2.findIndex((ele,index)=>{
+       return ele==9;
+ }),1)          
+ console.log(arr2);                         //[1, 2, 4, 5,6, 7, 8]
+
+ arr2.splice(arr2.findIndex((ele,index)=>{
+         return ele==6;
+ }),1)
+ console.log(arr2);                          //[ 1, 2, 4, 5, 7, 8 ]
+
+ let arr5=[
+    {"e_id":11,"e_name":"e_one","e_sal":10000},
+    {"e_id":22,"e_name":"e_two","e_sal":30000},
+    {"e_id":33,"e_name":"e_three","e_sal":40000},
+    {"e_id":44,"e_name":"e_four","e_sal":50000}  
+ ]
+ arr5.splice(arr5.findIndex((ele,index)=>{
+      return ele.e_id==22;
+ }),1);
+ console.log(arr5);                     /*[
+                                            { e_id: 11, e_name: 'e_one', e_sal: 10000 },
+                                            { e_id: 33, e_name: 'e_three', e_sal: 40000 },
+                                            { e_id: 44, e_name: 'e_four', e_sal: 50000 }
+                                        */
+
+//Some(): If at least one element statisfied the condition it will return true
+
+console.log(
+    [1,2,3,4,5,6,7,8].some((ele,index)=>{
+            return ele<=1;
+    })
+);                        //true
+
+console.log(
+    [1,2,3,4,5,6,7,8].some((ele,index)=>{
+            return ele>10;
+    })
+);                   //false
+
+/*every(): If all element statisfied the condition it will return true & all elements not statisfied the
+  the condition it will retrun false */
+
+console.log(
+    [10,20,30,40,50].every((ele,index)=>{
+            return ele>=60;
+    })
+);             //false
+
+console.log(
+    [10,20,30,40,50].every((ele,index)=>{
+            return ele<=50;
+    })
+);             //true
+
+//find(): If element is available it will return that ele otherwise it will return undefined.
+
+console.log(
+    [1,2,3,4,5,6,7,8].find((ele,index)=>{
+           return ele==8;
+    })
+);                   //8
+
+console.log(
+    [1,2,3,4,5,6,7,8].find((ele,index)=>{
+           return ele==10;
+    })
+);                   //undefined
+
+//fill(): It is used to replace the existing element with new element
+
+let arr6=[1,2,3,4];
+console.log(arr6.fill(100));   //[ 100, 100, 100, 100 ]
+
+console.log(arr6.fill(200,1));           //[ 100, 200, 200, 200 ]
+
+console.log(arr6.fill(300,2));           //[ 100, 200, 300, 300 ]
+
+console.log(arr6.fill(400,3));           //[ 100, 200, 300, 400 ]
+
+//Indexof(): It is used to won create indexof for repeated ele
+
+// let arr7 = [1,2,3,1,2,3];
+// arr7.forEach((ele,index)=>{
+//     console.log(arr7.indexOf(ele),index)
+// })                       //[0 1 2 0 1 2]
+
+let arr8= [10,20,30,10,20,30];
+console.log(
+    arr8.filter((ele,index)=>{
+        return arr8.indexOf(ele)!=index
+    })                                              //[ 10, 20, 30 ]
+)
+
+
+
