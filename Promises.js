@@ -85,17 +85,17 @@
                                     //[ 'Hello I am Nida', 'I am from Maharashtra', 'i am  java developer' ]
 
 
-let promise1 = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve("I am nida")
-      },300);
-})
+// let promise1 = new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         resolve("I am nida")
+//       },300);
+// })
 
-let promise2 = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        reject("error")
-    }, 500);
-})
+// let promise2 = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         reject("error")
+//     }, 500);
+// })
 
 // Promise.all([promise1,promise2]).then((posres)=>{
 //     console.log(posres)
@@ -106,12 +106,92 @@ let promise2 = new Promise((resolve, reject) => {
 
 //Promise.allSettled(): It will give all the resolve promise & also give reject promise
 
-Promise.allSettled([promise1,promise2]).then((posres)=>{
-    console.log(posres)
-}, (errorres)=>{
-    console.log(errorres)
-})                                              //[  { status: 'fulfilled', value: 'I am nida' },
+// Promise.allSettled([promise1,promise2]).then((posres)=>{
+//     console.log(posres)
+// }, (errorres)=>{
+//     console.log(errorres)
+// })                                              //[  { status: 'fulfilled', value: 'I am nida' },
                                                  //  { status: 'rejected', reason: 'error' } ]
 
+// let promise1= new Promise((resolve,reject)=>{
+
+//     setTimeout(() => {
+//         resolve ("Nida");
+//     }, 0);
+    
+// });
+
+// promise1.then((posRes)=>{
+//     console.log(posRes);
+// }, (errorRes)=>{
+//     console.log(errorRes);
+// });
+
+// let promise2 = new Promise((resolve, reject) => {
+//         resolve ("Khan");
+// });
+
+// promise2.then((posRes)=>{
+//        console.log(posRes)
+// }, (erroeRes)=>{
+//     console.log(erroeRes);       // Khan Nida ==> setTimeout will get less priority
+// });
+
+//async & await
+
+// let promise1 = new Promise((resolve, reject) => {
+//     resolve ("Nida Khan");
+// });
+
+// async function my_fun() {
+
+//     let result = await promise1;
+//     console.log(result);
+    
+// }
+
+// my_fun();                                     //Nida Khan
+
+
+let add = (num)=>{
+      return new Promise((resolve, reject) => {
+          resolve (num+10);                                 //15
+      })
+};
+
+let sub = (num)=>{
+    return new Promise((resolve, reject) => {
+        resolve (num-3);                                    //15-3=12
+    })
+};
+
+let mul = (num)=>{
+    return new Promise((resolve, reject) => {
+        resolve (num*2);                                        // 12*2 = 24
+    })
+};
+
+let div = (num)=>{
+    return new Promise((resolve, reject) => {
+        resolve (num/2+5);                                       // 24/2+5 = 17
+    })
+};
+
+
+async function cal() {
+
+    let addRes= await add(5);
+    let subRes= await sub(addRes);
+    let mulRes= await mul(subRes);
+    let divRes= await div(mulRes);
+
+    console.log(addRes , subRes , mulRes , divRes)
+    
+}                                             //15 12 24 17
+cal();
+
+// Sysncronous & Asyncronous call
+
+// to make syncronous call using JQuery
 
 
